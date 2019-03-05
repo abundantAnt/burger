@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-4 text-center">
+    <form>
+      <div class="form-group">
+        <h3>Add a burger.</h3>
+        <input class="form-control" type="text" id="todo-input" placeholder="Create your todo here"/>
+        <button class="btn btn-block btn-success" id="submit-btn">Add burger</button>
+      </div>
+    </form>
+  </div>
+  <div class="col-4">
+    <h3>Todos to-do</h3>
+    <ul class="list-group">
+    {{#each todoList}}
+      {{#unless completed}}
+        <li class="list-group-item">
+          {{todo}} 
+          <button data-id="{{id}}" class="mark-complete btn btn-info">C</button>
+          <button data-id="{{id}}" class="delete btn btn-danger"> X </button>
+        </li>
+      {{/unless}}
+    {{/each}}
+    </ul>
+  </div>
+  <div class="col-4">
+    <h3>Burgers - Devoured</h3>
+    <ul class="list-group">
+      {{#each todoList}}
+      {{#if completed}}
+      <li class="list-group-item">
+        {{todo}}
+        <button data-id="{{id}}" class="delete btn btn-danger"> X </button>
+      </li>
+      {{/if}}
+      {{/each}}
+    </ul>
+  </div>
+</div>
