@@ -24,4 +24,12 @@ router.post("/burgers/:id", function(req, res) {
     });
 });
 
+router.delete("/api/burgers/:id", function(req, res) {
+    console.log("burgerController:28");
+    burger.delete(req.params.id, function(result) {
+        console.log(result);
+        res.redirect("/");
+    });
+});
+
 module.exports = router;

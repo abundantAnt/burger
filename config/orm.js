@@ -48,14 +48,15 @@ var orm = {
     })
   },
 
-  delete: function (table, objColVals, condition, cb) {
-    var queryString = `DELETE FROM ${table} WHERE ${condition}`;
+  delete: function (table, id, cb) {
+    var queryString = `DELETE FROM ${table} WHERE id= ${id}`;
     console.log(queryString);
 
-    db.query(queryString, function (err, results) {
+    const query = db.query(queryString, function (err, results) {
       if (err) throw err;
       cb(results);
-    })
+    });
+    console.log(query.sql);
   }
 }
 
