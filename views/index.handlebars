@@ -12,7 +12,7 @@
     <h3>burgers to-do</h3>
     <ul class="list-group">
     {{#each burger_data}}
-      {{#unless completed}}
+      {{#unless devoured}}
         <li class="list-group-item">
           {{burger_name}} 
           <button data-id="{{id}}" class="mark-complete btn btn-info">C</button>
@@ -26,10 +26,9 @@
     <h3>Burgers - Devoured</h3>
     <ul class="list-group">
       {{#each burger_data}}
-      {{#if completed}}
+      {{#if devoured}}
       <li class="list-group-item">
-        {{burger}}
-        <button data-id="{{id}}" class="delete btn btn-danger"> X </button>
+        {{burger_name}} <button data-id="{{id}}" class="delete btn btn-danger"> X </button>
       </li>
       {{/if}}
       {{/each}}

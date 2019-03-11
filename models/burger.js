@@ -14,10 +14,7 @@ var burger = {
         ], cb);
     },
     update: function(id, cb) {
-        var condition = "id=" + id;
-        orm.update("burgers", {
-            devoured: true
-        }, condition, cb);
+        orm.update("burgers", id, cb);
     },
     delete: function(id, cb) {
         orm.delete("burgers", id, cb);

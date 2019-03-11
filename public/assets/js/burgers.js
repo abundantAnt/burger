@@ -22,6 +22,7 @@ $(document).ready(function(){
       method: "DELETE"
     }).then(function (data) {
       location.reload();
+      console.log(data);
     });
 
   })
